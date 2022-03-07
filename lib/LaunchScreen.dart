@@ -17,11 +17,12 @@ class LaunchScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 193.0),
             child: SizedBox.expand(
-                child: SvgPicture.string(
-              _svg_eylo,
-              allowDrawingOutsideViewBox: true,
-              fit: BoxFit.fill,
-            )),
+              child: SvgPicture.string(
+                _svg_eylo,
+                allowDrawingOutsideViewBox: true,
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.centerRight,
@@ -29,14 +30,8 @@ class LaunchScreen extends StatelessWidget {
               width: 318.0,
               height: 318.0,
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment(0.0, -1.0),
-                  end: Alignment(0.0, 1.0),
-                  colors: [Color(0xff514bc3), Color(0xff4048bf)],
-                  stops: [0.0, 1.0],
-                ),
-                borderRadius:
-                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+                image:
+                    DecorationImage(image: AssetImage('assets/images/car.png')),
               ),
             ),
           ),
@@ -65,35 +60,36 @@ class LaunchScreen extends StatelessWidget {
                 ),
                 Align(
                   alignment: const Alignment(0.004, 0.029),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Details()),
-                      );
-                    },
-                    child: SizedBox(
-                      width: 86.0,
-                      height: 21.0,
-                      child: Stack(
-                        children: const <Widget>[
-                          SizedBox.expand(
-                              child: Text(
-                            'Get Started',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 15,
-                              color: Color(0xffffffff),
-                              fontWeight: FontWeight.w500,
-                              height: 0.9333333333333333,
+                  child: SizedBox(
+                    width: 86.0,
+                    height: 21.0,
+                    child: Stack(
+                      children: <Widget>[
+                        SizedBox.expand(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Details()),
+                              );
+                            },
+                            child: const Text(
+                              'Get Started',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 15,
+                                color: Color(0xffffffff),
+                                fontWeight: FontWeight.w500,
+                                height: 0.9333333333333333,
+                              ),
+                              textHeightBehavior: TextHeightBehavior(
+                                  applyHeightToFirstAscent: false),
+                              softWrap: false,
                             ),
-                            textHeightBehavior: TextHeightBehavior(
-                                applyHeightToFirstAscent: false),
-                            softWrap: false,
-                          )),
-                        ],
-                      ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
