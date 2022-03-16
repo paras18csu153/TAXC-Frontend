@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:taxc/Dashboard.dart';
+import 'package:taxc/screens/Dashboard.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({

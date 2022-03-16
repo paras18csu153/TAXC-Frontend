@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:taxc/Details.dart';
+import 'package:taxc/screens/Details.dart';
 
 class LaunchScreen extends StatelessWidget {
   const LaunchScreen({
