@@ -6,6 +6,7 @@ class Dashboard extends StatelessWidget {
   const Dashboard({
     Key? key,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -198,10 +199,7 @@ class Dashboard extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment(1.0, -1.0),
                           end: Alignment(-1.0, 1.0),
-                          colors: [
-                            Color(0xff514bc3),
-                            Color(0xff4048bf)
-                          ],
+                          colors: [Color(0xff514bc3), Color(0xff4048bf)],
                           stops: [0.0, 1.0],
                         ),
                         borderRadius: BorderRadius.circular(28.0),
@@ -256,10 +254,7 @@ class Dashboard extends StatelessWidget {
                         gradient: const LinearGradient(
                           begin: Alignment(1.0, -1.0),
                           end: Alignment(-1.0, 1.0),
-                          colors: [
-                            Color(0xff514bc3),
-                            Color(0xff4048bf)
-                          ],
+                          colors: [Color(0xff514bc3), Color(0xff4048bf)],
                           stops: [0.0, 1.0],
                         ),
                         borderRadius: BorderRadius.circular(28.0),
@@ -317,10 +312,7 @@ class Dashboard extends StatelessWidget {
                           gradient: const LinearGradient(
                             begin: Alignment(1.0, -1.0),
                             end: Alignment(-1.0, 1.0),
-                            colors: [
-                              Color(0xff514bc3),
-                              Color(0xff4048bf)
-                            ],
+                            colors: [Color(0xff514bc3), Color(0xff4048bf)],
                             stops: [0.0, 1.0],
                           ),
                           borderRadius: BorderRadius.circular(28.0),

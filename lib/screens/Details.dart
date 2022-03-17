@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:taxc/screens/OTPScreen.dart';
 
 // Define a custom Form widget.
@@ -52,7 +53,7 @@ class DetailsState extends State<Details> {
         .then((user) => {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const OTPScreen()),
+                MaterialPageRoute(builder: (context) => OTPScreen(user)),
               )
             })
         .catchError((error) {
@@ -72,11 +73,18 @@ class DetailsState extends State<Details> {
     );
 
     if (response.statusCode == 200) {
-      return User.fromJson(jsonDecode(response.body));
+      User user = User.fromJson(jsonDecode(response.body));
+      final prefs = await SharedPreferences.getInstance();
+
+      await prefs.setString(
+          'authorization', response.headers['authorization'].toString());
+      await prefs.setString('username', user.username);
+
+      return user;
     } else {
       // If the server did not return a 201 CREATED response,
       // then throw an exception.
-      throw Exception('Failed to create user.');
+      return Future.error(jsonDecode(response.body)['message']);
     }
   }
 
@@ -297,6 +305,8 @@ class DetailsState extends State<Details> {
                     },
                     child: const Text('Accept & Continue'),
                     style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all<Size>(
+                          const Size.fromHeight(40)),
                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                           return const Color(
