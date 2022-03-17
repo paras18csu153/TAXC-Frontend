@@ -35,12 +35,6 @@ class DetailsState extends State<Details> {
   String type = "USER";
 
   void _submit() {
-    print(name);
-    print(username);
-    print(email);
-    print(phone);
-    print(password);
-    print(confirmpassword);
     var body = jsonEncode(<String, String>{
       'name': name,
       'username': username,

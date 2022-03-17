@@ -29,14 +29,12 @@ class OTPScreenState extends State<OTPScreen> {
   String otp = "";
 
   void _submit() async {
-    print(otp);
     final prefs = await SharedPreferences.getInstance();
 
     var body = jsonEncode(<String, String>{
       'username': prefs.getString('username').toString(),
       'otp': otp
     });
-    print(body);
     verifyAccount(body)
         .then((user) => {
               Navigator.push(
