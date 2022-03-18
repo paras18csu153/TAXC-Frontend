@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:taxc/screens/Dashboard.dart';
 import 'package:taxc/screens/OTPScreen.dart';
 
-import 'Details.dart';
+import 'Register.dart';
 
 // Define a custom Form widget.
 class OTPScreen extends StatefulWidget {

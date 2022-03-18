@@ -7,16 +7,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:taxc/screens/OTPScreen.dart';
 
 // Define a custom Form widget.
-class Details extends StatefulWidget {
-  const Details({Key? key}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
 
   @override
-  DetailsState createState() {
-    return DetailsState();
+  RegisterState createState() {
+    return RegisterState();
   }
 }
 
-class DetailsState extends State<Details> {
+class RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
 
   final nameController = TextEditingController();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:taxc/screens/Details.dart';
+import 'package:taxc/screens/Register.dart';
 
 class LaunchScreen extends StatelessWidget {
   const LaunchScreen({
@@ -71,7 +71,7 @@ class LaunchScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Details()),
+                                    builder: (context) => const Register()),
                               );
                             },
                             child: const Text(
