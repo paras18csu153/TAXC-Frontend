@@ -53,7 +53,7 @@ class OTPScreenState extends State<OTPScreen> {
 
     final response = await http.patch(
       // Uri.parse('http://192.168.1.8:3001/users/verifyPhone'),
-      Uri.parse('https://calm-reef-14808.herokuapp.com//users/verifyPhone'),
+      Uri.parse('https://calm-reef-14808.herokuapp.com/users/verifyPhone'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'authorization': prefs.getString('authorization').toString()

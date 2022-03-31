@@ -62,7 +62,7 @@ class LoginState extends State<Login> {
   Future<User> createAccount(body) async {
     final response = await http.post(
       // Uri.parse('http://192.168.1.8:3001/users'),
-      Uri.parse('https://calm-reef-14808.herokuapp.com//users'),
+      Uri.parse('https://calm-reef-14808.herokuapp.com/users'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
