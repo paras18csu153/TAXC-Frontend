@@ -106,6 +106,8 @@ class RegisterState extends State<Register> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
+                  Text("Register",style: TextStyle(color: Color(0xffffffff),
+                      fontSize: 25,)),
                   Expanded(
                       child: Padding(
                           padding:
@@ -118,17 +120,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your name',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your name.';
@@ -147,17 +149,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your username',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your username.';
@@ -176,17 +178,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your email',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your email.';
@@ -205,17 +207,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your phone',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your phone.';
@@ -234,17 +236,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your password',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your password.';
@@ -263,17 +265,17 @@ class RegisterState extends State<Register> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter your confirm password',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your confirm password.';
@@ -298,7 +300,7 @@ class RegisterState extends State<Register> {
                         _submit();
                       }
                     },
-                    child: const Text('Accept & Continue'),
+                    child: const Text('Sign Up'),
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all<Size>(
                           const Size.fromHeight(40)),

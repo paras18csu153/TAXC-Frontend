@@ -33,7 +33,7 @@ class LaunchScreen extends StatelessWidget {
               height: 318.0,
               decoration: const BoxDecoration(
                 image:
-                    DecorationImage(image: AssetImage('assets/images/car.png')),
+                    DecorationImage(image: AssetImage('assets/images/car.png',)),
               ),
             ),
           ),

@@ -100,17 +100,17 @@ class OTPScreenState extends State<OTPScreen> {
                                   enabledBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
                                     borderSide: BorderSide(
-                                        color: Color(0xff4048bf), width: 1.0),
+                                        color: Color(0xffffffff), width: 1.0),
                                   ),
                                   labelText: 'Enter otp',
                                   labelStyle:
-                                      TextStyle(color: Color(0xff4048bf))),
+                                      TextStyle(color: Color(0xffffffff))),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Please enter your otp.';

@@ -109,38 +109,42 @@ class LoginState extends State<Login> {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: nameController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your name',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your name.';
-                                }
-                                return null;
-                              }))),
+                      child: Text("Login", style: const TextStyle(
+                          color: Color(0xffffffff), fontSize: 25),)
+                  ),
+                  // Expanded(
+                  //     child: Padding(
+                  //         padding:
+                  //             const EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 5.0),
+                  //         child: TextFormField(
+                  //             controller: nameController,
+                  //             style: const TextStyle(
+                  //                 color: Color(0xffffffff), letterSpacing: 1),
+                  //             decoration: const InputDecoration(
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 border: OutlineInputBorder(),
+                  //                 focusedBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 labelText: 'Enter your name',
+                  //                 labelStyle:
+                  //                     TextStyle(color: Color(0xffffffff))),
+                  //             validator: (value) {
+                  //               if (value == null || value.isEmpty) {
+                  //                 return 'Please enter your name.';
+                  //               }
+                  //               return null;
+                  //             }))),
                   Expanded(
                       child: Padding(
                           padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                              const EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 5.0),
                           child: TextFormField(
                               controller: usernameController,
                               style: const TextStyle(
@@ -195,35 +199,35 @@ class LoginState extends State<Login> {
                                 }
                                 return null;
                               }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: phoneController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your phone',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your phone.';
-                                }
-                                return null;
-                              }))),
+                  // Expanded(
+                  //     child: Padding(
+                  //         padding:
+                  //             const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                  //         child: TextFormField(
+                  //             controller: phoneController,
+                  //             style: const TextStyle(
+                  //                 color: Color(0xffffffff), letterSpacing: 1),
+                  //             decoration: const InputDecoration(
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 border: OutlineInputBorder(),
+                  //                 focusedBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 labelText: 'Enter your phone',
+                  //                 labelStyle:
+                  //                     TextStyle(color: Color(0xffffffff))),
+                  //             validator: (value) {
+                  //               if (value == null || value.isEmpty) {
+                  //                 return 'Please enter your phone.';
+                  //               }
+                  //               return null;
+                  //             }))),
                   Expanded(
                       child: Padding(
                           padding:
@@ -253,38 +257,38 @@ class LoginState extends State<Login> {
                                 }
                                 return null;
                               }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: confirmpasswordController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your confirm password',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your confirm password.';
-                                }
-                                if (value != passwordController.text) {
-                                  return 'Password and Confirm Password does not match.';
-                                }
-                                return null;
-                              }))),
+                  // Expanded(
+                  //     child: Padding(
+                  //         padding:
+                  //             const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                  //         child: TextFormField(
+                  //             controller: confirmpasswordController,
+                  //             style: const TextStyle(
+                  //                 color: Color(0xffffffff), letterSpacing: 1),
+                  //             decoration: const InputDecoration(
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 border: OutlineInputBorder(),
+                  //                 focusedBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 labelText: 'Enter your confirm password',
+                  //                 labelStyle:
+                  //                     TextStyle(color: Color(0xffffffff))),
+                  //             validator: (value) {
+                  //               if (value == null || value.isEmpty) {
+                  //                 return 'Please enter your confirm password.';
+                  //               }
+                  //               if (value != passwordController.text) {
+                  //                 return 'Password and Confirm Password does not match.';
+                  //               }
+                  //               return null;
+                  //             }))),
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
@@ -300,7 +304,7 @@ class LoginState extends State<Login> {
                         _submit();
                       }
                     },
-                    child: const Text('Accept & Continue'),
+                    child: const Text('Sign In'),
                     style: ButtonStyle(
                       minimumSize: MaterialStateProperty.all<Size>(
                           const Size.fromHeight(40)),
@@ -312,6 +316,24 @@ class LoginState extends State<Login> {
                       ),
                     ),
                   ),
+                  Text("OR",style: TextStyle(color: Color(0xffffffff)),),
+                  ElevatedButton(onPressed:(){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Register()),
+                    );
+                  } , child: const Text('Register'),
+                    style: ButtonStyle(
+                      minimumSize: MaterialStateProperty.all<Size>(
+                          const Size.fromHeight(40)),
+                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                          return const Color(
+                              0xff4048bf); // Use the component's default.
+                        },
+                      ),
+                    ),)
                 ],
               ),
             )));
