@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:taxc/screens/Login.dart';
 import 'package:taxc/screens/Register.dart';
 
 class LaunchScreen extends StatelessWidget {
@@ -27,6 +28,7 @@ class LaunchScreen extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Container(
+              padding: EdgeInsets.fromLTRB(400,400.0,80.0,0.0),
               width: 318.0,
               height: 318.0,
               decoration: const BoxDecoration(
@@ -71,7 +73,7 @@ class LaunchScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Register()),
+                                    builder: (context) => const Login()),
                               );
                             },
                             child: const Text(
