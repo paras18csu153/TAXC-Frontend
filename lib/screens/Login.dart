@@ -38,12 +38,12 @@ class LoginState extends State<Login> {
 
   void _submit() {
     var body = jsonEncode(<String, String>{
-      'name': name,
+      // 'name': name,
       'username': username,
-      'email': email,
-      'phone': phone,
+      // 'email': email,
+      // 'phone': phone,
       'password': password,
-      'type': type
+      // 'type': type
     });
     createAccount(body)
         .then((user) => {
@@ -170,35 +170,35 @@ class LoginState extends State<Login> {
                                 }
                                 return null;
                               }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: emailController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your email',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your email.';
-                                }
-                                return null;
-                              }))),
+                  // Expanded(
+                  //     child: Padding(
+                  //         padding:
+                  //             const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                  //         child: TextFormField(
+                  //             controller: emailController,
+                  //             style: const TextStyle(
+                  //                 color: Color(0xffffffff), letterSpacing: 1),
+                  //             decoration: const InputDecoration(
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 border: OutlineInputBorder(),
+                  //                 focusedBorder: OutlineInputBorder(
+                  //                   // width: 0.0 produces a thin "hairline" border
+                  //                   borderSide: BorderSide(
+                  //                       color: Color(0xffffffff), width: 1.0),
+                  //                 ),
+                  //                 labelText: 'Enter your email',
+                  //                 labelStyle:
+                  //                     TextStyle(color: Color(0xffffffff))),
+                  //             validator: (value) {
+                  //               if (value == null || value.isEmpty) {
+                  //                 return 'Please enter your email.';
+                  //               }
+                  //               return null;
+                  //             }))),
                   // Expanded(
                   //     child: Padding(
                   //         padding:

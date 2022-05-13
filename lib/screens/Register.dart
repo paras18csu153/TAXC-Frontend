@@ -17,6 +17,7 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
+   String _role = '';
   final _formKey = GlobalKey<FormState>();
 
   final nameController = TextEditingController();
@@ -32,7 +33,6 @@ class RegisterState extends State<Register> {
   String phone = "";
   String password = "";
   String confirmpassword = "";
-  String type = "USER";
 
   void _submit() {
     var body = jsonEncode(<String, String>{
@@ -41,8 +41,9 @@ class RegisterState extends State<Register> {
       'email': email,
       'phone': phone,
       'password': password,
-      'type': type
+      'type': _role
     });
+    print(body);
     createAccount(body)
         .then((user) => {
               Navigator.push(
@@ -100,7 +101,8 @@ class RegisterState extends State<Register> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xff0d1724),
-        body: Container(
+        body:
+        Container(
             padding: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 20.0),
             child: Form(
               key: _formKey,
@@ -285,6 +287,81 @@ class RegisterState extends State<Register> {
                                 }
                                 return null;
                               }))),
+                  Row(
+                    children: [
+                      Radio(
+                          fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                          value: "USER",
+                          groupValue: _role,
+                          onChanged: (value){
+                            setState(() {
+                              _role = value.toString() ;
+                            });
+                          }
+                      ),
+                      Text("User",style: TextStyle(color: Color(0xffffffff)),),
+                      Radio(
+                        fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                          value: "DIVER",
+                          groupValue: _role,
+                          onChanged: (value){
+                            setState(() {
+                              _role = value.toString() ;
+                            });
+                          }
+                      ),
+                      Text("Diver",style: TextStyle(color: Color(0xffffffff)),),
+                    ],
+                  ),
+                  // Row(
+                  //   children: [
+                  //     Text("HI",style: TextStyle(color: Colors.white),),
+                  //     Radio(
+                  //         value: "DIVER",
+                  //         groupValue: _role,
+                  //         onChanged: (value){
+                  //           setState(() {
+                  //             value= _role ;
+                  //           });
+                  //         }
+                  //     ),
+                  //   ],
+                  // ),
+                  // Expanded(
+                  //     child: Padding(
+                  //         padding:
+                  //         const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                  //         child: Container(
+                  //           child:Row(
+                  //           children: [
+                  //             ListTile(
+                  //               title: const Text('USER'),
+                  //               leading: Radio(
+                  //                   value: "USER",
+                  //                   groupValue: _role,
+                  //                   onChanged: (value){
+                  //                     setState(() {
+                  //                       value= _role ;
+                  //                     });
+                  //                   }
+                  //               ),
+                  //             ),
+                  //             ListTile(
+                  //               leading: Radio(
+                  //                   value: "DIVER",
+                  //                   groupValue: _role,
+                  //                   onChanged: (value){
+                  //                     setState(() {
+                  //                       value= _role ;
+                  //                     });
+                  //                   }
+                  //               ),
+                  //             ),
+                  //           ],
+                  //         ),)
+                  //
+                  //     )
+                  // ),
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
