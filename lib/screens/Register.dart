@@ -70,6 +70,7 @@ class RegisterState extends State<Register> {
 
     if (response.statusCode == 200) {
       User user = User.fromJson(jsonDecode(response.body));
+
       final prefs = await SharedPreferences.getInstance();
 
       await prefs.setString(
@@ -99,299 +100,247 @@ class RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: const Color(0xff0d1724),
-        body:
-        Container(
-            padding: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 20.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: <Widget>[
-                  Text("Register",style: TextStyle(color: Color(0xffffffff),
+        body:SingleChildScrollView(
+          child: Container(
+              padding: const EdgeInsets.fromLTRB(20.0, 100.0, 20.0, 20.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Text("Register",style: TextStyle(color: Color(0xffffffff),
                       fontSize: 25,)),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: nameController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your name',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your name.';
-                                }
-                                return null;
-                              }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: usernameController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your username',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your username.';
-                                }
-                                return null;
-                              }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: emailController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your email',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your email.';
-                                }
-                                return null;
-                              }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: phoneController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your phone',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your phone.';
-                                }
-                                return null;
-                              }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: passwordController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your password',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your password.';
-                                }
-                                return null;
-                              }))),
-                  Expanded(
-                      child: Padding(
-                          padding:
-                              const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                          child: TextFormField(
-                              controller: confirmpasswordController,
-                              style: const TextStyle(
-                                  color: Color(0xffffffff), letterSpacing: 1),
-                              decoration: const InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                    // width: 0.0 produces a thin "hairline" border
-                                    borderSide: BorderSide(
-                                        color: Color(0xffffffff), width: 1.0),
-                                  ),
-                                  labelText: 'Enter your confirm password',
-                                  labelStyle:
-                                      TextStyle(color: Color(0xffffffff))),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your confirm password.';
-                                }
-                                if (value != passwordController.text) {
-                                  return 'Password and Confirm Password does not match.';
-                                }
-                                return null;
-                              }))),
-                  Row(
-                    children: [
-                      Radio(
-                          fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                          value: "USER",
-                          groupValue: _role,
-                          onChanged: (value){
-                            setState(() {
-                              _role = value.toString() ;
-                            });
-                          }
-                      ),
-                      Text("User",style: TextStyle(color: Color(0xffffffff)),),
-                      Radio(
-                        fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                          value: "DIVER",
-                          groupValue: _role,
-                          onChanged: (value){
-                            setState(() {
-                              _role = value.toString() ;
-                            });
-                          }
-                      ),
-                      Text("Diver",style: TextStyle(color: Color(0xffffffff)),),
-                    ],
-                  ),
-                  // Row(
-                  //   children: [
-                  //     Text("HI",style: TextStyle(color: Colors.white),),
-                  //     Radio(
-                  //         value: "DIVER",
-                  //         groupValue: _role,
-                  //         onChanged: (value){
-                  //           setState(() {
-                  //             value= _role ;
-                  //           });
-                  //         }
-                  //     ),
-                  //   ],
-                  // ),
-                  // Expanded(
-                  //     child: Padding(
-                  //         padding:
-                  //         const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-                  //         child: Container(
-                  //           child:Row(
-                  //           children: [
-                  //             ListTile(
-                  //               title: const Text('USER'),
-                  //               leading: Radio(
-                  //                   value: "USER",
-                  //                   groupValue: _role,
-                  //                   onChanged: (value){
-                  //                     setState(() {
-                  //                       value= _role ;
-                  //                     });
-                  //                   }
-                  //               ),
-                  //             ),
-                  //             ListTile(
-                  //               leading: Radio(
-                  //                   value: "DIVER",
-                  //                   groupValue: _role,
-                  //                   onChanged: (value){
-                  //                     setState(() {
-                  //                       value= _role ;
-                  //                     });
-                  //                   }
-                  //               ),
-                  //             ),
-                  //           ],
-                  //         ),)
-                  //
-                  //     )
-                  // ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Processing Data')),
-                        );
-                        name = nameController.text;
-                        username = usernameController.text;
-                        email = emailController.text;
-                        phone = phoneController.text;
-                        password = passwordController.text;
-                        confirmpassword = confirmpasswordController.text;
-                        _submit();
-                      }
-                    },
-                    child: const Text('Sign Up'),
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all<Size>(
-                          const Size.fromHeight(40)),
-                      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                          return const Color(
-                              0xff4048bf); // Use the component's default.
-                        },
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: nameController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your name',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your name.';
+                              }
+                              return null;
+                            })),
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: usernameController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your username',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your username.';
+                              }
+                              return null;
+                            })),
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: emailController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your email',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email.';
+                              }
+                              return null;
+                            })),
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: phoneController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your phone',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your phone.';
+                              }
+                              return null;
+                            })),
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: passwordController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your password',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your password.';
+                              }
+                              return null;
+                            })),
+                    Padding(
+                        padding:
+                        const EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
+                        child: TextFormField(
+                            controller: confirmpasswordController,
+                            style: const TextStyle(
+                                color: Color(0xffffffff), letterSpacing: 1),
+                            decoration: const InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  // width: 0.0 produces a thin "hairline" border
+                                  borderSide: BorderSide(
+                                      color: Color(0xffffffff), width: 1.0),
+                                ),
+                                labelText: 'Enter your confirm password',
+                                labelStyle:
+                                TextStyle(color: Color(0xffffffff))),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your confirm password.';
+                              }
+                              if (value != passwordController.text) {
+                                return 'Password and Confirm Password does not match.';
+                              }
+                              return null;
+                            })),
+                    Row(
+                      children: [
+                        Radio(
+                            fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                            value: "USER",
+                            groupValue: _role,
+                            onChanged: (value){
+                              setState(() {
+                                _role = value.toString() ;
+                              });
+                            }
+                        ),
+                        Text("User",style: TextStyle(color: Color(0xffffffff)),),
+                        Radio(
+                            fillColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                            value: "DRIVER",
+                            groupValue: _role,
+                            onChanged: (value){
+                              setState(() {
+                                _role = value.toString() ;
+                              });
+                            }
+                        ),
+                        Text("Driver",style: TextStyle(color: Color(0xffffffff)),),
+                      ],
+                    ),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                          name = nameController.text;
+                          username = usernameController.text;
+                          email = emailController.text;
+                          phone = phoneController.text;
+                          password = passwordController.text;
+                          confirmpassword = confirmpasswordController.text;
+                          _submit();
+                        }
+                      },
+                      child: const Text('Sign Up'),
+                      style: ButtonStyle(
+                        minimumSize: MaterialStateProperty.all<Size>(
+                            const Size.fromHeight(40)),
+                        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                            return const Color(
+                                0xff4048bf); // Use the component's default.
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            )));
+                  ],
+                ),
+              )),
+        )
+        );
   }
 }
 
